@@ -7,9 +7,11 @@ const person = {
 };
 
 // Normal Method
-const printName = (personData) => {
+const printName1 = (personData) => {
     console.log(personData.name);
-}
+};
+
+printName1(person);
 
 // Now same thing using object destructuring
 
