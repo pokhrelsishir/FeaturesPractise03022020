@@ -1,20 +1,18 @@
-const http = require('http');
+const express = require('express');
+const bodyParser = require('body-parser');
 
-// function rqListner(req, res) {
+const app = express();
 
-// }
+const adminRoutes = require('./routes/admin');
+const shopRoutes = require('./routes/shop');
 
-// http.createServer(rqListner);
+app.use(bodyParser.urlencoded({ extended: false }));
 
-// http.createServer(function (req, res) {
-
-// });
-
-
-
-const server = http.createServer((req, res) => {
-    console.log(req);
-});
+app.use(adminRoutes);
+app.use(shopRoutes);
 
 
-server.listen(3000);
+
+
+app.listen(3000);
+
